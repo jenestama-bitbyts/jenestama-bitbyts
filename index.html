@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jennifer Estama | Web Developer</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101827;
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a { color: white; text-decoration: none; }
+    .hero {
+      padding: 110px 8%;
+      max-width: 950px;
+    }
+    .hero h1 { font-size: clamp(40px, 7vw, 72px); line-height: 1.1; }
+    .hero p { color: #b8c3d6; font-size: 18px; }
+    .button {
+      display: inline-block;
+      background: #8b5cf6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 15px;
+    }
+    section { padding: 50px 8%; }
+    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skills span {
+      padding: 10px 16px;
+      background: #263348;
+      border-radius: 8px;
+    }
+    footer { padding: 30px 8%; color: #aab4c5; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>JENESTAMA.BITBYTS</strong>
+    <a href="#contact">Contact</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p>HELLO, I'M JENNIFER ESTAMA</p>
+      <h1>WordPress Developer & Web Designer.</h1>
+      <p>
+        I build responsive, functional, and user-friendly websites.
+        I specialize in WordPress development, Elementor, website
+        maintenance, and SEO optimization.
+      </p>
+      <a class="button" href="#contact">Let's Work Together</a>
+    </div>
+
+    <section>
+      <h2>My Skills</h2>
+      <div class="skills">
+        <span>WordPress</span>
+        <span>Elementor Pro</span>
+        <span>Divi</span>
+        <span>WooCommerce</span>
+        <span>SEO</span>
+        <span>HTML & CSS</span>
+        <span>Website Maintenance</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Let's Connect</h2>
+      <p>Have a project in mind? Let's talk!</p>
+      <a class="button" href="mailto:YOUR_EMAIL@example.com">
+        Email Me
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Jennifer Estama. All rights reserved.
+  </footer>
+</body>
+</html>
