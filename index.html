@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jennifer Estama — WordPress Developer, Web Designer and SEO Specialist based in Bacolod City, Philippines.">
+  <meta name="theme-color" content="#111126">
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon-180.png">
+  <title>Jennifer Estama | Web Developer & Designer</title>
+  <style>
+    :root {
+      --bg: #0c0c18; --panel: #151527; --panel2: #1b1b31;
+      --text: #f7f7fc; --muted: #b8b8ca; --accent: #a78bfa;
+      --accent2: #7c3aed; --line: rgba(255,255,255,.11);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial, sans-serif; line-height: 1.65; }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); background: rgba(12,12,24,.88); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 850; letter-spacing: .04em; text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 22px; flex-wrap: wrap; }
+    .navlinks a { color: var(--muted); font-size: .92rem; text-decoration: none; }
+    .navlinks a:hover { color: white; }
+    .hero { padding: 104px 0 88px; background: radial-gradient(ellipse at 78% 12%, rgba(124,58,237,.28), transparent 42%), linear-gradient(135deg,#101022,#17152b 65%,#111126); }
+    .eyebrow { color: var(--accent); text-transform: uppercase; font-size: .76rem; font-weight: 800; letter-spacing: .18em; }
+    h1 { max-width: 850px; margin: 14px 0 18px; font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.05; letter-spacing: -.055em; }
+    .hero p { max-width: 700px; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 9px; background: var(--accent2); color: white; text-decoration: none; font-weight: 750; border: 1px solid var(--accent2); }
+    .btn.secondary { background: transparent; border-color: var(--line); }
+    section { padding: 82px 0; }
+    .section-head { margin-bottom: 30px; }
+    h2 { margin: 7px 0 10px; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -.035em; }
+    .section-head p, .muted { color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 26px; }
+    .facts { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .fact { background: var(--panel2); padding: 15px; border-radius: 12px; }
+    .fact small { display: block; color: var(--muted); margin-bottom: 3px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip { background: var(--panel2); border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; color: #e6e1ff; font-size: .93rem; }
+    .services { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .service h3 { margin: 0 0 7px; }
+    .service p { color: var(--muted); margin: 0; font-size: .95rem; }
+    #portfolio { background: #101020; }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+    .project { overflow: hidden; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
+    .shot { height: 430px; display: flex; align-items: flex-start; justify-content: center; padding: 12px; background: #090912; overflow: auto; scrollbar-width: thin; }
+    .shot img { display: block; width: 100%; height: auto; object-fit: contain; object-position: top; border-radius: 7px; }
+    .project-info { padding: 20px 22px 22px; }
+    .project-info h3 { margin: 0 0 3px; font-size: 1.2rem; }
+    .client { color: var(--muted); font-size: .88rem; margin: 0 0 12px; }
+    .project-info p { color: var(--muted); margin: 0 0 15px; font-size: .94rem; }
+    .project-link { color: var(--accent); font-weight: 750; text-decoration: none; }
+    .project-link:hover { text-decoration: underline; }
+    .experience { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .contact { background: radial-gradient(ellipse at 85% 15%, rgba(124,58,237,.2), transparent 40%), #111126; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .contact a { color: var(--accent); text-decoration: none; }
+    footer { padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+
+    .gallery-section { background: #0f0f20; }
+    .gallery-intro { max-width: 760px; }
+    .gallery-label { color: var(--accent); font-size: .82rem; font-weight: 750; margin: 0 0 14px; }
+    .art-gallery { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 31%); gap: 18px; overflow-x: auto; padding: 4px 2px 18px; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--accent2) var(--panel); }
+    .art-card { scroll-snap-align: start; min-width: 0; overflow: hidden; background: var(--panel); border: 1px solid var(--line); border-radius: 15px; }
+    .art-card a { display: block; text-decoration: none; }
+    .art-card img { display: block; width: 100%; height: 300px; object-fit: contain; background: #080811; padding: 10px; }
+    .art-card .art-caption { padding: 12px 15px 15px; color: var(--muted); font-size: .9rem; }
+    .art-card strong { display: block; color: var(--text); margin-bottom: 3px; }
+    .business-gallery { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; margin-top: 34px; }
+    .business-gallery .art-card img { height: 260px; object-fit: contain; }
+    .tools-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .tool-group h3 { margin: 0 0 8px; color: var(--text); font-size: 1rem; }
+    .tool-group p { color: var(--muted); margin: 0; font-size: .94rem; }
+    .learning-panel { margin-top: 20px; background: linear-gradient(135deg, rgba(124,58,237,.14), rgba(21,21,39,.95)); }
+    .learning-panel p { color: var(--muted); margin: 0; }
+    .learning-panel h3 { margin-top: 0; }
+    @media (max-width: 760px) {
+      .art-gallery { grid-auto-columns: minmax(78%, 1fr); }
+      .business-gallery, .tools-grid { grid-template-columns: 1fr; }
+      .art-card img { height: 330px; }
+    }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      nav { align-items: flex-start; flex-direction: column; padding: 12px 0; }
+      .brand img { width: 168px; max-height: 54px; }
+      .hero-brand-banner { max-width: 100%; margin-bottom: 28px; padding: 8px; }
+      .navlinks { gap: 14px; }
+      .hero { padding: 76px 0 68px; }
+      section { padding: 60px 0; }
+      .about-grid, .projects, .experience, .contact-grid { grid-template-columns: 1fr; }
+      .services { grid-template-columns: 1fr; }
+      .shot { height: 390px; }
+      .facts { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home" aria-label="Jennifer Estama portfolio home">
+      <img src="assets/jennifer-estama-logo.png" alt="Jennifer Estama Portfolio logo">
+    </a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#services">Services</a>
+      <a href="#portfolio">Websites</a><a href="#graphic-design">Graphic Design</a><a href="#seo-tools">SEO & Tools</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="eyebrow">WordPress Developer · Web Designer · SEO Specialist</div>
+      <h1>Building thoughtful websites that help businesses grow.</h1>
+      <p>Hi, I'm Jennifer Estama — a web developer based in Bacolod City, Philippines. I create, improve, maintain, and migrate websites, with a focus on practical solutions and user-friendly experiences.</p>
+      <div class="actions">
+        <a class="btn" href="#portfolio">View my work</a>
+        <a class="btn secondary" href="#contact">Get in touch</a>
+        <a class="resume-link" href="assets/Jennifer_Estama_Resume.pdf" target="_blank" rel="noopener">Download My Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">About me</div><h2>Development, design, and dependable website support.</h2></div>
+      <div class="about-grid">
+        <div class="panel">
+          <p>I'm a Bachelor of Science in Information Technology graduate with hands-on experience working on business websites and digital projects. My work includes website builds and rebuilds, redesigns, rebranding, maintenance, migrations, and front-end and back-end adjustments.</p>
+          <p class="muted">I enjoy turning website requirements into clean, functional experiences and helping keep sites secure, updated, and running smoothly.</p>
+        </div>
+        <div class="facts">
+          <div class="fact"><small>Location</small><strong>Bacolod City, Philippines</strong></div>
+          <div class="fact"><small>Education</small><strong>BS Information Technology</strong></div>
+          <div class="fact"><small>Focus</small><strong>WordPress & Web Development</strong></div>
+          <div class="fact"><small>Also work with</small><strong>SEO & Website Design</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Technical skills</div><h2>Tools and technologies</h2></div>
+      <div class="skills">
+        <span class="chip">WordPress</span><span class="chip">Elementor Pro</span><span class="chip">Divi</span>
+        <span class="chip">WPBakery</span><span class="chip">WooCommerce</span><span class="chip">HTML</span>
+        <span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">PHP</span>
+        <span class="chip">Rank Math Pro</span><span class="chip">Yoast SEO</span><span class="chip">Screaming Frog</span><span class="chip">Google Search Console</span><span class="chip">Website Maintenance</span>
+        <span class="chip">Website Migration</span><span class="chip">WP Rocket</span><span class="chip">ShortPixel</span><span class="chip">Wordfence</span><span class="chip">Responsive Design</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">What I do</div><h2>Services & capabilities</h2><p>Support across the website lifecycle — from launch to ongoing improvements.</p></div>
+      <div class="services">
+        <article class="panel service"><h3>Website Development & Rebuilds</h3><p>Building new WordPress websites and rebuilding existing sites to improve structure, usability, and presentation.</p></article>
+        <article class="panel service"><h3>Redesign & Rebranding</h3><p>Refreshing layouts, visual identity, website content presentation, and brand assets to create a consistent experience.</p></article>
+        <article class="panel service"><h3>Maintenance & Optimization</h3><p>Plugin and theme updates, troubleshooting, performance improvements, security checks, and ongoing site care.</p></article>
+        <article class="panel service"><h3>Website Migration</h3><p>Moving websites between hosting environments and assisting with domain, DNS, and deployment tasks.</p></article>
+        <article class="panel service"><h3>SEO & E-commerce</h3><p>On-page SEO improvements, WooCommerce setup and support, and practical content and site structure enhancements.</p></article>
+        <article class="panel service"><h3>Graphic & Web Assets</h3><p>Creating logos, vector graphics, and supporting visual assets for websites and digital projects.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Selected work</div><h2>Website portfolio</h2>
+        <p>A selection of websites I've worked on. Select a project link to visit the live website. Client surnames are abbreviated for privacy.</p>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <div class="shot"><img src="assets/jarogo-media.png" alt="JaroGo Media website screenshot"></div>
+          <div class="project-info"><h3>JaroGo Media</h3><div class="client">Client: Richard D••••••••</div><p>Media and platform website project showcasing content, culture, community, and digital experiences.</p><a class="project-link" href="https://jarogomedia.com/" target="_blank" rel="noopener">Visit live website ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="shot"><img src="assets/jaro-magazine.png" alt="JaroGo Magazine website screenshot"></div>
+          <div class="project-info"><h3>JaroGo Magazine</h3><div class="client">Client: Richard D••••••••</div><p>Online magazine website with categorized editorial content and media features.</p><a class="project-link" href="https://magazine.watchjaro.com/" target="_blank" rel="noopener">Visit live website ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="shot"><img src="assets/tpsmea.png" alt="Texas Private School Music Educators website screenshot"></div>
+          <div class="project-info"><h3>Texas Private School Music Educators</h3><div class="client">Client: Ron M••••••</div><p>Organization website presenting programs, events, membership information, and resources.</p><a class="project-link" href="https://tpsmea.org/" target="_blank" rel="noopener">Visit live website ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="shot"><img src="assets/asb-real-estate.png" alt="ASB Real Estate website screenshot"></div>
+          <div class="project-info"><h3>ASB Real Estate</h3><div class="client">Client: Heather C•••••••</div><p>Real estate investment website with company information, investment approach, and market content.</p><a class="project-link" href="https://www.asbrealestate.com/" target="_blank" rel="noopener">Visit live website ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="shot"><img src="assets/uptown-locksmiths.png" alt="A1 Uptown Locksmiths website screenshot"></div>
+          <div class="project-info"><h3>A1 Uptown Locksmiths</h3><div class="client">Client: Dean W•••</div><p>Service business website presenting residential and commercial locksmith services.</p><a class="project-link" href="https://a1uptownlocksmiths.ca/" target="_blank" rel="noopener">Visit live website ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="shot"><img src="assets/absolute-dance.png" alt="Absolute Dance Studio website screenshot"></div>
+          <div class="project-info"><h3>Absolute Dance Studio</h3><div class="client">Client: Dean W•••</div><p>Dance studio website featuring classes, programs, testimonials, and contact information.</p><a class="project-link" href="https://absolutedanceinc.com/" target="_blank" rel="noopener">Visit live website ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="shot"><img src="assets/coastal-home.png" alt="Coastal Home Improvements website screenshot"></div>
+          <div class="project-info"><h3>Coastal Home Improvements</h3><div class="client">Client: Calvin U•••</div><p>Home improvement website featuring renovation services, project imagery, and customer reviews.</p><a class="project-link" href="https://gocoastalnj.com/" target="_blank" rel="noopener">Visit live website ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="shot"><img src="assets/monk-associates.png" alt="Monk and Associates website screenshot"></div>
+          <div class="project-info"><h3>Monk & Associates</h3><div class="client">Client: Christopher M••••••••</div><p>Biological consulting website presenting services, representative projects, and company expertise.</p><a class="project-link" href="https://monkassociates.com/" target="_blank" rel="noopener">Visit live website ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="gallery-section" id="graphic-design">
+    <div class="wrap">
+      <div class="section-head gallery-intro">
+        <div class="eyebrow">Graphic design</div>
+        <h2>Artwork & business card designs</h2>
+        <p>Selected examples of my digital artwork and business card designs. These are samples from my own design work.</p>
+      </div>
+
+      <p class="gallery-label">DIGITAL ARTWORK · ICONIC PAW</p>
+      <div class="art-gallery" aria-label="Scrollable digital artwork gallery">
+        <article class="art-card">
+          <a href="assets/graphic-art/33055%208x10.jpg" target="_blank" rel="noopener">
+            <img src="assets/graphic-art/33055%208x10.jpg" alt="Digital portrait artwork of a cat in historical costume" loading="lazy">
+            <div class="art-caption"><strong>Digital pet portrait</strong>Custom character-style portrait</div>
+          </a>
+        </article>
+        <article class="art-card">
+          <a href="assets/graphic-art/32690%208x10.jpg" target="_blank" rel="noopener">
+            <img src="assets/graphic-art/32690%208x10.jpg" alt="Digital portrait artwork of a dog holding a glowing blue sword" loading="lazy">
+            <div class="art-caption"><strong>Digital pet portrait</strong>Character-inspired artwork</div>
+          </a>
+        </article>
+        <article class="art-card">
+          <a href="assets/graphic-art/31949-2%208x10.jpg" target="_blank" rel="noopener">
+            <img src="assets/graphic-art/31949-2%208x10.jpg" alt="Digital portrait artwork of a dog in a fantasy setting" loading="lazy">
+            <div class="art-caption"><strong>Digital pet portrait</strong>Photo-based digital painting</div>
+          </a>
+        </article>
+        <article class="art-card">
+          <a href="assets/graphic-art/31994-1%2012x18.jpg" target="_blank" rel="noopener">
+            <img src="assets/graphic-art/31994-1%2012x18.jpg" alt="Digital portrait artwork of a pet in a themed costume" loading="lazy">
+            <div class="art-caption"><strong>Digital pet portrait</strong>Custom themed composition</div>
+          </a>
+        </article>
+        <article class="art-card">
+          <a href="assets/graphic-art/32941%208x10.jpg" target="_blank" rel="noopener">
+            <img src="assets/graphic-art/32941%208x10.jpg" alt="Digital portrait artwork of a dog in a period costume" loading="lazy">
+            <div class="art-caption"><strong>Digital pet portrait</strong>Costume and background detailing</div>
+          </a>
+        </article>
+        <article class="art-card">
+          <a href="assets/graphic-art/194227938_321010209508811_7724045188713966433_n.png.webp" target="_blank" rel="noopener">
+            <img src="assets/graphic-art/194227938_321010209508811_7724045188713966433_n.png.webp" alt="Digital character portrait artwork" loading="lazy">
+            <div class="art-caption"><strong>Digital artwork</strong>Character portrait sample</div>
+          </a>
+        </article>
+      </div>
+
+      <p class="gallery-label" style="margin-top:28px;">BUSINESS CARD DESIGN</p>
+      <div class="business-gallery" aria-label="Business card design samples">
+        <article class="art-card">
+          <a href="assets/business-cards/Businesscard%201.jpg" target="_blank" rel="noopener">
+            <img src="assets/business-cards/Businesscard%201.jpg" alt="Business card design sample one" loading="lazy">
+            <div class="art-caption"><strong>Business card concept</strong>Layout and print design</div>
+          </a>
+        </article>
+        <article class="art-card">
+          <a href="assets/business-cards/BUSINESS%20CARD%202.jpg" target="_blank" rel="noopener">
+            <img src="assets/business-cards/BUSINESS%20CARD%202.jpg" alt="Business card design sample two" loading="lazy">
+            <div class="art-caption"><strong>Business card concept</strong>Front and back design presentation</div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="seo-tools">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">SEO & website tools</div>
+        <h2>Tools I work with</h2>
+        <p>Tools I've used for SEO checks, website performance, maintenance, and security.</p>
+      </div>
+      <div class="tools-grid">
+        <article class="panel tool-group">
+          <h3>SEO & site audits</h3>
+          <p>Rank Math Pro · Yoast SEO · Screaming Frog SEO Spider · Google Search Console</p>
+        </article>
+        <article class="panel tool-group">
+          <h3>Performance & optimization</h3>
+          <p>WP Rocket · ShortPixel · Cloudflare</p>
+        </article>
+        <article class="panel tool-group">
+          <h3>Security & maintenance</h3>
+          <p>Wordfence · WordPress updates · Plugin and theme checks · Website backups</p>
+        </article>
+      </div>
+      <div class="panel learning-panel">
+        <h3>Keeping up with new tools and updates</h3>
+        <p>I make time to explore new tools, including AI tools, and keep up with WordPress releases, plugin updates, and changes in SEO. I test new features and learn how they can be useful in day-to-day website work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Contact</div><h2>Let's build something great.</h2><p>Have a website project or need help improving an existing site? Get in touch.</p></div>
+      <div class="contact-grid">
+        <div class="panel">
+          <h3>Jennifer Estama</h3>
+          <p class="muted">WordPress Developer · Web Designer · SEO Specialist</p>
+          <p>📍 Bacolod City, Philippines</p>
+          <p>✉️ <a href="mailto:jenestama2@gmail.com">jenestama2@gmail.com</a></p>
+          <p>☎️ <a href="tel:+639998527449">+63 999 852 7449</a></p>
+        </div>
+        <div class="panel">
+          <h3>Let's connect</h3>
+          <p class="muted">For project inquiries, collaborations, or professional opportunities, send me an email.</p>
+          <a class="btn" href="mailto:jenestama2@gmail.com?subject=Portfolio%20Inquiry">Email Jennifer</a>
+          <p><a href="assets/Jennifer_Estama_Resume.docx" download>Download editable resume (Word)</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Jennifer Estama · JENESTAMA.BITBYTS. All rights reserved.</div></footer>
+</body>
+</html>
